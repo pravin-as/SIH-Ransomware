@@ -21,7 +21,8 @@ process.on("uncaughtException" , (err)=>{
       })
 }) ;   
 
-
+const connectDatabase = require("./Database/database.js") ;   
+connectDatabase(); 
 app.listen(process.env.PORT || 3000 , ()=>{ 
      console.log(`server is working on http://localhost:${process.env.PORT}`) 
 

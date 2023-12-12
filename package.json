@@ -4,7 +4,7 @@
   "description": "it is a tool by which organisations can analyse their security against ransomware",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1" , 
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node backend/server.js",
     "dev": "nodemon backend/server.js"
   },
@@ -22,23 +22,33 @@
   "author": "TISHANG",
   "license": "ISC",
   "dependencies": {
+    "assert": "^2.1.0",
     "axios": "^1.6.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.2",
+    "chai": "^4.3.10",
+    "child_process": "^1.0.2",
     "cloudinary": "^1.41.0",
     "concurrently": "^8.2.2",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "cors-anywhere": "^0.4.4",
     "dotenv": "^16.3.1",
+    "events": "^3.3.0",
     "express": "^4.18.2",
     "express-fileupload": "^1.4.3",
+    "fs": "^0.0.1-security",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^7.6.7",
     "morgan": "^1.10.0",
+    "node-nmap": "^4.0.0",
+    "node-nmap-vulners": "^1.0.2",
     "nodemailer": "^6.9.7",
     "nodemon": "^2.0.22",
-    "validator": "^13.11.0"
+    "os": "^0.1.2",
+    "queued-up": "^2.0.2",
+    "validator": "^13.11.0",
+    "xml2js": "^0.6.2"
   },
   "bugs": {
     "url": "https://github.com/TISHANG-1/SIH-Ransomware/issues"
