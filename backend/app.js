@@ -46,9 +46,13 @@ app.use(function(req  ,res , next){
     next();
 }) ; 
 
-const errorMiddleware = require('./middleware/error.js') ;   
-const nMap =  require('./routes/nmapRoutes.js') ; 
-app.use("/api/v1" , nMap) ; 
+const errorMiddleware = require('./middleware/error') ;   
+const nMap =  require('./routes/nmapRoutes') ; 
+const user = require('./routes/userRoutes');  
+
+app.use("/api/v1" , nMap) ;   
+app.use("/api/v1" , user) ;   
+
 app.use(errorMiddleware) ; 
 
 
