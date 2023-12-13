@@ -1,0 +1,32 @@
+.Overview2-section {
+    height: 140vh; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 60px;
+    background-color: rgb(23,24,28);
+}
+    .Overview2-columns-container {
+      display: flex;
+      justify-content: space-between;
+      border: 1px solid #ccc;
+      font-size: 18px;
+      font-weight: 100;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      
+    }
+    
+    .Overview2-right-content-text {
+      flex-basis: 50%; /* Adjust the width as needed */
+      border: 1px solid #ccc;
+      padding: 80px;
+      padding-top: 200px;
+    }
+    .Overview2-left-content-text {
+      flex-basis: 50%; /* Adjust the width as needed */
+      padding: 80px;
+      text-align: left;
+    }

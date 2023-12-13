@@ -1,8 +1,6 @@
 import './App.css';  
-import Header from "./component/layout/Header/Header.js"   
-import Footer from "./component/layout/Footer/Footer.js" 
 import LoginSignUp from "./component/layout/LoginSignUp.js" ;    
-import Home from "./component/layout/Home/Home.jsx"
+import Home from "./component/layout/Home/Home"
 import { BrowserRouter as Router }  from 'react-router-dom';   
 import WebFont from "webfontloader" ;  
 import store from './store.js';
@@ -32,12 +30,17 @@ function App() {
     }
   }, [isAuthenticated, user, dispatch]); 
   return (   
-    <Router> 
-    <Routes>
-    {!isAuthenticated && <Route path = "/"  Component={LoginSignUp}/>}
-    {isAuthenticated && <Route path = "/" Component={Home}/>} 
+    <Router>   
+    {/* {isAuthenticated && <Header/>} */}
+    <Routes>   
+    {!isAuthenticated && <Route path = "/"  Component={LoginSignUp}/>} 
+
+    {isAuthenticated && <Route path = "/" Component={Home}/>}  
+
     </Routes>
-    </Router> 
+    {/* {isAuthenticated && <Footer/>} */}
+    </Router>  
+    
 
   );
 }
