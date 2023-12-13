@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({extended: true})) ;
 
 
 // adding control for backend CORS resolution 
-app.use((res , req ,next)=>{ 
+app.use((req , res ,next)=>{ 
 
     // Set the allowed origins
     res.header('Access-Control-Allow-Origin', 'http://localhost:3000'); // Replace with your frontend domain

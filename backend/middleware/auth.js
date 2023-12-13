@@ -1,14 +1,14 @@
 const ErrorHandler = require("../utils/errorhandler") ; 
 const catchAsyncErrors = require('./catchAsyncError') ;   
 const jwt =  require("jsonwebtoken") ; 
-
+const User  =  require("../models/userModel") ; 
 exports.isAuthenticatedUser = catchAsyncErrors(async(req ,res , next)=>{ 
    console.log(req) ;   
    console.log("Authenticating the user") ; 
    const token  = req.cookies.token ; 
    console.log(`generated using JWT token : ${token}`);
    const decodeData = jwt.verify(token , process.env.JWT_SECRET) ;    
-
+   req.user  = await User.findById(decodeData.id); 
    next() ; 
 }) ;   
 

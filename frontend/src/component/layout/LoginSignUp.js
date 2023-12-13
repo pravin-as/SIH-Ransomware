@@ -169,14 +169,14 @@ const LoginSignUp = ( {props} ) => {
                     />
                 </div>
              
-                 <div id="registerImage">  
+                 {/* <div id="registerImage">  
                  <img src={avatarPreview} alt="Avatar Preview" />   
                  <input type="file" 
                  name = "avatar"
                  accept ="image/"
                  onChange = {registerDataChange}
                   />
-                 </div>  
+                 </div>   */}
                  <input type="submit"
                  value ="Register"
                  className= "signUpBtn"  
