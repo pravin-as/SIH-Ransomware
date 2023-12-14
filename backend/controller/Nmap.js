@@ -32,13 +32,30 @@ exports.scanOnPort  = catchAsyncError(async (req , res , next)=>{
     //         success: false , 
     //         err: err
     //      })
-    // }); 
+    // });  
+     
+    ; 
+      // Save the sample entry to the database
     
     var nmapscan = new nmap.NmapScan( `${ipAdd} --script vulners` , '-sV');   
     console.log(ipAdd) ; 
     let data1;
 
-    nmapscan.on('complete', async (data) => {
+    nmapscan.on('complete', async (data) => {    
+        console.log("-----Creating------") ; 
+    const sampleEntry = await vulnerabilities.create({
+        cveID: "CVE-2023-12345",
+        dateAdded: new Date(),
+        dueDate: "2023-12-31",
+        knownRansomwareCampaignUse: "No",
+        notes: "This is a sample entry.",
+        product: "Your Product",
+        requiredAction: "Update",
+        shortDescription: "A brief description of the vulnerability",
+        vendorProject: "Vendor Project Name",
+      }); 
+      await sampleEntry.save(); 
+      console.log("-----Created------") 
         console.log(data);
         data1 = data[0].openPorts;  
         var vulnerity = [] ; 
@@ -91,4 +108,5 @@ exports.scanOnPort  = catchAsyncError(async (req , res , next)=>{
 
 
 }
-) ; 
+) ;  
+
