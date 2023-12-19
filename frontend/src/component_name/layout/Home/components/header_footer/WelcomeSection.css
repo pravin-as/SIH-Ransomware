@@ -3,25 +3,25 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: #32485a;
+    color: white;
     text-align: center;
     font-family: Arial, sans-serif;
     padding: 50px; 
     font-size: medium;
-    background-image: url('../../background2.png');
-    background-position: center;
-    background-size: cover;
+
+    background-image: url('../../background.png');
   }
   
   .right-content h2{
     flex: 1;
     text-align: left;
-    font-size: 70px;
+    font-size: 80px;
   }
   .right-content p{
     flex: 1;
     text-align: left;
-    font-size: 20px;
+    font-size: 40px;
   }
-
+  
+  /* Additional styling for h1, h2, and p tags can be added here */
   

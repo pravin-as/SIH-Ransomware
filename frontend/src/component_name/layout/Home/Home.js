@@ -1,4 +1,4 @@
-// import './Home.css';
+import './Home.css';
 
 import Header from './components/header_footer/header';
 import Footer from './components/header_footer/footer';
@@ -16,19 +16,19 @@ function App() {
       <header className="App-header">
         <div className="header-intro">
           <Header />
-          {/* <Slide cascade delay={0.1}> */}
+          <Slide cascade delay={0.1}>
           <IntroSection/>
-          {/* </Slide> */}
-            {/* questionnaire */}
+          </Slide>
+       
+          <Overview />
+
+         
           <Overview2 />
-          <Overview4 /> 
           
-          
-          {/* <Overview3 /> */}
-          {/* <Overview /> */}
-          
+
+          <Overview3 />
            
-          
+          <Overview4 /> 
          <Footer /> 
         </div>
       </header>

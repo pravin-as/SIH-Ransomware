@@ -10,7 +10,6 @@ import {useDispatch , useSelector } from "react-redux" ;
 import {login , clearErrors , register } from "../../actions/userActions" ;  
 import {useAlert } from "react-alert" ;  
 import { useNavigate } from 'react-router';
-
 const LoginSignUp = ( {props} ) => {      
     const history = useNavigate();
     const dispatch = useDispatch();
@@ -26,6 +25,9 @@ const LoginSignUp = ( {props} ) => {
     const [avatarPreview ,setAvatarPreview ] = useState("/profile.png") ; 
     
 
+
+
+
     const [loginEmail , setLoginEmail]= useState("") ; 
     const [loginPassword , setLoginPassword] = useState("");
 
@@ -34,15 +36,6 @@ const LoginSignUp = ( {props} ) => {
            dispatch(login(loginEmail , loginPassword), )
     }  
     
-
-
-    const [selectedOption, setSelectedOption] = useState('');
-
-        const handleOptionChange = (event) => {
-            setSelectedOption(event.target.value);
-        };
-
-
     const registerSubmit  =(e) => { 
           e.preventDefault() ;  
  
@@ -53,6 +46,8 @@ const LoginSignUp = ( {props} ) => {
           myForm.set("password" , password) ; 
           myForm.set("avatar" , avatar) ;   
           dispatch(register(myForm)) ;
+
+          
     }    
     const registerDataChange = (e) =>{ 
         if(e.target.name ==="avatar"){ 
@@ -97,12 +92,10 @@ const LoginSignUp = ( {props} ) => {
            }
 
     }  
-    
   return (
-     <Fragment >    
-        <div className="loginwindow">
+     <Fragment>    
         <div 
-        className='div-1' > 
+        className='div-1'> 
            <div className='img-1'> 
               <img src= {logo} alt="error while loading" />
            </div>
@@ -121,29 +114,19 @@ const LoginSignUp = ( {props} ) => {
             </div>
                 <form ref  = {loginTab} className="loginForm" onSubmit = {loginSubmit}> 
                 <div className = "loginEmail"> 
-                    <MailOutlineIcon/> 
-                    <input type="email" placeholder='EMAIL' required value= {loginEmail}  
-                    onChange = {(e) => setLoginEmail(e.target.value) }
-                    />
+                 <MailOutlineIcon/> 
+                 <input type="email" placeholder='EMAIL' required value= {loginEmail}  
+                 onChange = {(e) => setLoginEmail(e.target.value) }
+                 />
                 </div>  
                 <div className="loginPassword">  
-                    <LockOpenIcon /> 
-                    <input type="password" placeholder = "PASSWORD" 
-                    required 
-                    value = {loginPassword}
-                    onChange = {(e) =>  setLoginPassword(e.target.value) 
-                    } />
+                 <LockOpenIcon /> 
+                 <input type="password" placeholder = "PASSWORD" 
+                 required 
+                 value = {loginPassword}
+                 onChange = {(e) =>  setLoginPassword(e.target.value) 
+                 } />
                 </div> 
-
-                <div className="UserChoice">
-                    <select value={selectedOption} onChange={handleOptionChange}>
-                        <option value="">Select an option</option>
-                        <option value="option3">NTRO</option>
-                        <option value="option1">Organisation</option>
-                        <option value="option2">Individual User</option>
-                    </select>
-                </div>
-
                 <Link to="/password/forgot">Forget Password ?</Link>
                 <input type="submit" value="login" className = "loginBtn" />
                 
@@ -185,15 +168,7 @@ const LoginSignUp = ( {props} ) => {
                     onChange = {registerDataChange} 
                     />
                 </div>
-                <div className="UserChoice">
-                    <select value={selectedOption} onChange={handleOptionChange}>
-                        <option value="">Select an option</option>
-                        <option value="option3">NTRO</option>
-                        <option value="option1">Organisation</option>
-                        <option value="option2">Individual User</option>
-                        
-                    </select>
-                </div>
+             
                  {/* <div id="registerImage">  
                  <img src={avatarPreview} alt="Avatar Preview" />   
                  <input type="file" 
@@ -211,9 +186,8 @@ const LoginSignUp = ( {props} ) => {
          </div>
         </div> 
       </div>
-      </div>
      </Fragment>
   )
 } 
 
-export default LoginSignUp;
+export default LoginSignUp

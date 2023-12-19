@@ -1,27 +1,14 @@
-body{
-     background-image: url('background2.png');
-     background-position: center;
-     background-size: cover;
-}
 .div-1 {
     height: 100vh;
     width: 52vw;
-    /* background: linear-gradient(to left , white , grey); ; or any color you prefer */
+    background: linear-gradient(to left , white , grey); ; /* or any color you prefer */
     float: left; 
     position:sticky;
-    text-align: center;
-    /* bring in center from column */
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
-     
   } 
-
   .div-2 {
     height: 100vh;
     width: 45vw;
-    /* background: linear-gradient(to right , white , grey);  */
+    background: linear-gradient(to right , white , grey); 
     float: right; 
     position:sticky;
   } 
@@ -36,15 +23,16 @@ body{
     /* background-color: rgb(242, 241, 241);  */
     top:0% ; 
     left:0 ; 
+
 }  
 
 .loginSignUpBox{ 
     background-color: white;
-    width: 30vw ; 
+    width: 25vw ; 
     height: 70vh ;   
     box-sizing: border-box ;
     overflow : hidden ; 
-     padding: 2vmax ;
+
 }  
 .login_signUp_toggle{ 
      display:flex ; 
@@ -65,7 +53,7 @@ body{
       color: black ; 
 }
 .loginSignUpBox > div > button {
-      background-color: #45647d;
+      background-color: black;
       height : 3px ; 
       width: 50% ; 
       border : none ; 
@@ -82,6 +70,8 @@ body{
     padding: 2vmax;  
     height: 70% ;  
     transition: all 0.5s ;
+
+
 }
 .loginForm > div ,
 .signUpForm> div{  
@@ -121,7 +111,7 @@ body{
 }  
 .loginBtn, .signUpBtn{ 
    border: none; 
-   background: linear-gradient(to bottom , #45647d,  rgb(134, 153, 155)); 
+   background: linear-gradient(to bottom , black,  grey); 
    color : white; 
    font : 300 0.9vmax "Roboto" ; 
    width : 100%  ; 
@@ -136,7 +126,7 @@ body{
       transForm: translateY(100%) ; 
 }  
 .loginBtn:hover, .signUpBtn:hover{ 
-    background: #45647d;
+    background: black;
 }  
 .shiftToLeft{ 
        transform : translateX(-100%) ; 
@@ -227,30 +217,4 @@ body{
         padding : 1.8vmax; 
     }
 
-}
-
-
-.UserChoice select{
-     display: flex ; 
-     width: 100% ; 
-     align-items: center;
-     font-family: cursive ;
-     font-size: 1vmax ; 
-     font-weight: 300 ; 
-     color: black ; 
-     background-color: white ; 
-     padding: 1vmax ; 
-     border: 1px solid rgba(0 , 0 , 0 , 0.267); 
-}
-
-.UserChoice select option{
-     font-family: cursive ;
-     font-size: 1vmax ; 
-     font-weight: 300 ; 
-     color: black ; 
-     background-color: white ; 
-     padding: 1vmax ; 
-     cursor: pointer ; 
-     transition: all 0.5s ; 
-     box-shadow: 0 2px 5px rgba(0 , 0 , 0 , 0.219);
 }

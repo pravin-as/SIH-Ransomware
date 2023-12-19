@@ -38,8 +38,8 @@ function App() {
      <Routes>   
     {!isAuthenticated && <Route path = "/"  Component={LoginSignUp}/>} 
 
-    {/* {isAuthenticated && <Route path = "/" Component={Home}/>}    */}
-    {isAuthenticated && <Route path = "/" Component={Questions}/>}   
+    {isAuthenticated && <Route path = "/" Component={Home}/>}    
+    {isAuthenticated && <Route path = "/questions" Component={Questions}/>}   
    
     
     </Routes>  
