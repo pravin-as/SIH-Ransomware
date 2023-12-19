@@ -7,7 +7,7 @@ export  const OPEN_PORT_TEST = ()=> async(dispatch)=>{
             let link  = `http://localhost:4000/api/v1/nmap/openPort`;  
             await axios.get(link)
             .then(async(res)=>{ 
-                  const list_ = res.data.openPort ;  
+                  const list_ = res.data.openPorts ;  
                   const l1  = [445 , 3389] ; 
                   const l2  = [true  , true] ; 
                   for(let  i =  0 ; i < list_.size  ; i++){ 

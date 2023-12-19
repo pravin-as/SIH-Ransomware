@@ -1,0 +1,65 @@
+/* Add this CSS to your stylesheet or component style */
+
+/* Styling for the Questions component container */
+.questions-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fff;
+  }
+  
+  /* Styling for the loader */
+  .loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Styling for the form */
+  .questions-form {
+    margin-top: 20px;
+  }
+  
+  .questions-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .questions-table th,
+  .questions-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .questions-table th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Style for checkboxes */
+  .questions-table input[type="checkbox"] {
+    margin: 0;
+  }
+  
+  /* Styling for the submit button */
+  .form-submit-button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .form-submit-button:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Add more styling based on your preferences */
+  

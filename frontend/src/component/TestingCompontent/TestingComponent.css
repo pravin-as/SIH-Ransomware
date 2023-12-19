@@ -1,0 +1,30 @@
+/* TestingComponent.css */
+
+.testing-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .floating-box {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    margin: 16px;
+    min-width: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .loading {
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  
+  .success {
+    color: green;
+    font-size: 24px;
+    margin-top: 8px;
+  }
+  

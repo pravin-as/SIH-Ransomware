@@ -48,10 +48,12 @@ app.use(function(req  ,res , next){
 
 const errorMiddleware = require('./middleware/error') ;   
 const nMap =  require('./routes/nmapRoutes') ; 
-const user = require('./routes/userRoutes');  
+const user = require('./routes/userRoutes');   
+const question  = require('./routes/QuestionRoutes') ; 
 
 app.use("/api/v1" , nMap) ;   
 app.use("/api/v1" , user) ;   
+app.use("/api/v1" , question) ; 
 
 app.use(errorMiddleware) ; 
 

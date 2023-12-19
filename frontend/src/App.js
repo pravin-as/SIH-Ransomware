@@ -10,7 +10,8 @@ import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import {loadUser} from "./actions/userActions" 
-import TempComponent from './component/TestingComponent/TempComponent.js';
+import Questions from './component/layout/Questions/Questions.js';
+
 
 function App() {  
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -32,15 +33,17 @@ function App() {
   }, [isAuthenticated, user, dispatch]); 
   return (   
     <Router>   
-         <TempComponent/>
-    {/* {isAuthenticated && <Header/>} */}
-    {/* <Routes>   
+        
+     
+     <Routes>   
     {!isAuthenticated && <Route path = "/"  Component={LoginSignUp}/>} 
 
-    {isAuthenticated && <Route path = "/" Component={Home}/>}  
+    {/* {isAuthenticated && <Route path = "/" Component={Home}/>}    */}
+    {isAuthenticated && <Route path = "/" Component={Questions}/>}   
+   
     
-    </Routes> */}
-    {/* {isAuthenticated && <Footer/>} */}
+    </Routes>  
+  
     </Router>  
     
 

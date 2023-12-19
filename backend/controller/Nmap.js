@@ -110,3 +110,43 @@ exports.scanOnPort  = catchAsyncError(async (req , res , next)=>{
 }
 ) ;  
 
+exports.openPorts = catchAsyncError(async(req , res , next)=>{ 
+  var nmapscan = new nmap.NmapScan( `${ipAdd} --script vulners` , '-sV');   
+  console.log(ipAdd) ; 
+  let data1;
+
+  nmapscan.on('complete', async (data) => {    
+      const ipAdd = req.body.ipAdd ;  
+      console.log(ipAdd) ;
+      data1 = data[0].openPorts;  
+      var openPorts = [] ; 
+      for (var i = 0; i < data1.length; i++) {
+          // Check if the current element has a 'vulners' property
+          openPorts.push(data1.port) ; 
+        }
+        
+
+      await console.log(data1);  
+      
+      res.status(200).send({
+          success: true,
+          message: "nmap succeed",   
+          openPorts: openPorts, 
+      });   
+      
+     
+  });
+
+  nmapscan.on('error', function (error) {
+      console.log(error);
+
+      res.status(500).send({
+          success: false,
+          message: "Error during nmap scan",
+          error: error.message,
+      }); 
+     
+  });
+
+  await nmapscan.startScan();  
+})

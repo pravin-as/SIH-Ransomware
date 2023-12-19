@@ -1,4 +1,4 @@
-import {TEST_3_STARTING} from "../constants/test_3_Constant" ;   
+import {TEST_3_STARTING , TEST_3_COMPLETED} from "../constants/test_3_Constant" ;   
 
 export const test_3 = ()=> async(dispatch)=>{
     
@@ -31,6 +31,8 @@ export const test_3 = ()=> async(dispatch)=>{
             arr[0] = true;
     }
     
+    dispatch({type: TEST_3_COMPLETED , 
+     payload : arr}) ; 
 
     
 
