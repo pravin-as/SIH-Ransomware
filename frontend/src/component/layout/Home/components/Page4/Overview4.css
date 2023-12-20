@@ -1,0 +1,106 @@
+.Overview4-section {
+    height: 120vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(7, 7, 7);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif; 
+    background-color: rgb(189, 189, 194);
+    margin-top: -10px;
+}
+
+.container{
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 0em;
+    margin-top:0px;
+  }
+.row > div {
+    width: 25%;
+    margin-left: 0em;
+  }
+  
+  .col {
+    flex: 1;
+    margin: 2em 2em 2em 2em ; /* Adjust the margin as needed */
+    box-sizing: border-box;
+  }
+  
+.FileUpload{
+  background-image: url('fileUpload2.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 240px;
+  border-radius: 20px;
+}
+.Port{
+  background-image: url('port2.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 240px;
+  border-radius: 20px;
+}
+.Credit{
+  background-image: url('credit2.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 240px;
+  border-radius: 20px;
+}
+.Domain{
+  background-image: url('domainimg.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 240px;
+  border-radius: 20px;
+}
+
+.clicktoresult{
+  text-align: center;
+  padding: 5%;
+  font-size: 40px;
+  padding-bottom: 10px;
+}
+.clicktoresult button{
+  width: fit-content;
+  padding: 10px;
+  font-size: 20px;
+  background-color: rgb(7, 128, 3);
+  color: white;
+  border-radius: 5px;
+  
+}
+
+
+.overlay-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  background-color: rgb(63, 53, 197);
+}
+
+.position-relative {
+  position: relative;
+}
+
+.FileUpload,
+.Credit,
+.Port,
+.Domain {
+  position: relative;
+}
+
+/* Add more styles as needed for each image container */

@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({extended: true})) ;
 
 
 // adding control for backend CORS resolution 
-app.use((res , req ,next)=>{ 
+app.use((req , res ,next)=>{ 
 
     // Set the allowed origins
     res.header('Access-Control-Allow-Origin', 'http://localhost:3000'); // Replace with your frontend domain
@@ -46,9 +46,15 @@ app.use(function(req  ,res , next){
     next();
 }) ; 
 
-const errorMiddleware = require('./middleware/error.js') ;   
-const nMap =  require('./routes/nmapRoutes.js') ; 
-app.use("/api/v1" , nMap) ; 
+const errorMiddleware = require('./middleware/error') ;   
+const nMap =  require('./routes/nmapRoutes') ; 
+const user = require('./routes/userRoutes');   
+const question  = require('./routes/QuestionRoutes') ; 
+
+app.use("/api/v1" , nMap) ;   
+app.use("/api/v1" , user) ;   
+app.use("/api/v1" , question) ; 
+
 app.use(errorMiddleware) ; 
 
 

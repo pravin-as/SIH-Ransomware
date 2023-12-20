@@ -1,0 +1,49 @@
+.Overview2-section {
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: rgb(150, 151, 153);
+}
+    .Overview2-columns-container {
+      display: flex;
+      justify-content: space-between;
+      border: 1px solid #ccc;
+      font-size: 18px;
+      font-weight: 100;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      
+    }
+    
+    .Overview2-right-content-text {
+      flex-basis: 50%; /* Adjust the width as needed */
+      border: 1px solid #ccc;
+      padding: 50px;
+      padding-top: 100px;
+    }
+    .Overview2-left-content-text {
+      flex-basis: 50%; /* Adjust the width as needed */
+      padding: 50px;
+      text-align: left;
+    }
+
+    .clicktoresult{
+      text-align: center;
+      padding: 5%;
+      font-size: 40px;
+      padding-bottom: 10px;
+    }
+    .clicktoresult button{
+      width: fit-content;
+      padding: 10px;
+      font-size: 20px;
+      background-color: rgb(7, 128, 3);
+      color: white;
+      border-radius: 5px;
+      
+    }

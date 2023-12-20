@@ -1,0 +1,27 @@
+.intro-section {
+    height: 100vh; /* Set the height to the full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 50px; 
+    font-size: medium;
+
+    background-image: url('../../background.png');
+  }
+  
+  .right-content h2{
+    flex: 1;
+    text-align: left;
+    font-size: 80px;
+  }
+  .right-content p{
+    flex: 1;
+    text-align: left;
+    font-size: 40px;
+  }
+  
+  /* Additional styling for h1, h2, and p tags can be added here */
+  
