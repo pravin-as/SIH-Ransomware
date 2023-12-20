@@ -1,11 +1,12 @@
-import {TEST_3_STARTING , TEST_3_COMPLETED} from "../constants/test_3_Constant" ;   
+import {TEST_3_STARTING , TEST_3_COMPLETED , NEW_ACCESS_DOMAIN} from "../constants/test_3_Constant" ;   
+import axios from "axios" ; 
 
 export const test_3 = ()=> async(dispatch)=>{
     
     dispatch({type: TEST_3_STARTING});  
     let arr = [true , true] ; 
     dispatch({type: NEW_ACCESS_DOMAIN}) ;  
-    let url = `domain`
+    let url = `www.google.com` ;
     let link  = `https://api.whoapi.com/?domain=${url}&r=whois&apikey=250d83bfc076a5401150f474907831af` ; 
     let new_  = false ; 
     await axios.get(link)

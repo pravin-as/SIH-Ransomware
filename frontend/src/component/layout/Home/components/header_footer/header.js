@@ -43,7 +43,7 @@ const NavLinks = () => (
     <li><Link to="/vision">Vision</Link></li>
     <li><Link to="/programs">Programs</Link></li>
     <li><Link to="/blog">Blog</Link></li>
-    <Button tag={Link} to="/questions" color="success">Start Ransomware Check</Button>
+    <Button className='button-1' tag={Link} to="/questions" color="success">Start Ransomware Check</Button>
   </ul>
 );
 

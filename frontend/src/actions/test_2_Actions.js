@@ -1,9 +1,9 @@
-import {OPEN_PORT_TEST_STARING,  OPEN_PORT_TEST_FINISHED }   from  "../constants/test_2_Constants" ;  
+import {OPEN_PORT_TEST_STARTING,  OPEN_PORT_TEST_FINISHED }   from  "../constants/test_2_Constants" ;  
 
 import axios from 'axios' ; 
 
 export  const OPEN_PORT_TEST = ()=> async(dispatch)=>{  
-            dispatch({type: OPEN_PORT_TEST_STARING}) ;   
+            dispatch({type: OPEN_PORT_TEST_STARTING}) ;   
             let link  = `http://localhost:4000/api/v1/nmap/openPort`;  
             await axios.get(link)
             .then(async(res)=>{ 

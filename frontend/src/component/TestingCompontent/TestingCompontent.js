@@ -9,21 +9,24 @@ import { OPEN_PORT_TEST } from '../../actions/test_2_Actions.js';
 import { test_3 } from '../../actions/test_3_Actions.js';
 import './TestingComponent.css'; // Import your CSS file
 
-function TestingComponent() {
+function TestingComponent() {  
+
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  dispatch(test_File_Download);
-  dispatch(OPEN_PORT_TEST);
-  dispatch(test_3);
+  const dispatch = useDispatch(); 
   const { loading_1, results_1 } = useSelector((state) => state.test_1);
   const { loading_2, results_2 } = useSelector((state) => state.test_2);
   const { loading_3, results_3 } = useSelector((state) => state.test_3);
   const [dots, setDots] = useState('.');
+  useEffect(()=>{
+  dispatch(test_File_Download());
+  dispatch(OPEN_PORT_TEST());
+  dispatch(test_3()); 
+  } , []) ; 
 
   useEffect(() => {
     if (!loading_1 && !loading_2 && !loading_3) {
       // All tests have finished loading
-      setTimeout(() => navigate('/result', { state: { id: 1, name: 'sabaoon' } }), 2000);
+      setTimeout(() => navigate('/result', { state: { id: 1, name: 'sabaoon' } }), 10000);
     }
   }, [loading_1, loading_2, loading_3, navigate]);
 
@@ -36,40 +39,42 @@ function TestingComponent() {
   }, []);
 
   return (
-    <Fragment>
-      <Loader />
+    <Fragment>  
+      <Loader/>
       <div className="testing-container">
-        {loading_1 && (
+        {(loading_1  || loading_2 ||loading_3  || loading_1 === undefined ) && (
           <div className="floating-box">
             <span>Test 1</span>
             <div className="loading">{`Loading${dots}`}</div>
           </div>
         )}
-        {loading_2 && (
+        {(loading_1 || loading_2  ||loading_3 || loading_2 === undefined ) && (
           <div className="floating-box">
             <span>Test 2</span>
             <div className="loading">{`Loading${dots}`}</div>
           </div>
         )}
-        {loading_3 && (
+        {(loading_1 || loading_2 ||loading_3 || loading_3 === undefined ) && (
           <div className="floating-box">
             <span>Test 3</span>
             <div className="loading">{`Loading${dots}`}</div>
           </div>
         )}
-        {results_1 && (
+        </div>
+        <div className="testing-container-1">
+        {  results_1 !== undefined && results_1.length() && (
           <div className="floating-box">
             <span>Test 1</span>
             <div className="success">✔️</div>
           </div>
         )}
-        {results_2 && (
+        {  results_2 !== undefined && results_2.length() && (
           <div className="floating-box">
             <span>Test 2</span>
             <div className="success">✔️</div>
           </div>
         )}
-        {results_3 && (
+        { results_3 !== undefined &&  results_3.length() && (
           <div className="floating-box">
             <span>Test 3</span>
             <div className="success">✔️</div>

@@ -5,7 +5,8 @@ import { Slide } from 'react-awesome-reveal';
 import attacker from './attacker.png';
 import credit from './credit2.jpg';
 import fileUpload from './fileUpload2.png';
-import port from './port2.jpg';
+import port from './port2.jpg'; 
+import { Link } from 'react-router-dom';
 
 const Overview4 = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -72,7 +73,7 @@ const Overview4 = () => {
         </div>
 
         <div className='clicktoresult'>
-          <button>Test My RansomWare Defenses</button>
+          <Button className='button-1' tag={Link} to="/auto-test" >Test My RansomWare Defenses</Button>
         </div>
             
       </div>

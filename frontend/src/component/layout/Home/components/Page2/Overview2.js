@@ -1,7 +1,9 @@
 import React from 'react';
 import './Overview2.css'; // Ensure this file is in the same directory
 import { Slide } from 'react-awesome-reveal';
-import { Button } from 'reactstrap';
+import { Button } from 'reactstrap';  
+import { Link } from 'react-router-dom';
+
 const Overview2 = () => {
   return (
     <div className="Overview2-section">
@@ -20,7 +22,7 @@ const Overview2 = () => {
           <h3>
           <Slide delay={0.9} >
               <div className='clicktoresult'>
-                <button>Start The Questionnaire</button>
+                <Button className='button-1'  tag={Link} to="/questions">Start The Questionnaire</Button>
               </div>
           </Slide>
           </h3>

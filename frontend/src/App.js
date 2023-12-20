@@ -10,7 +10,8 @@ import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import {loadUser} from "./actions/userActions" 
-import Questions from './component/layout/Questions/Questions.js';
+import Questions from './component/layout/Questions/Questions.js';  
+import TestingComponent from './component/TestingCompontent/TestingCompontent.js';
 
 
 function App() {  
@@ -40,6 +41,7 @@ function App() {
 
     {isAuthenticated && <Route path = "/" Component={Home}/>}    
     {isAuthenticated && <Route path = "/questions" Component={Questions}/>}   
+    {isAuthenticated && <Route path = "/auto-test" Component={TestingComponent}/>}   
    
     
     </Routes>  

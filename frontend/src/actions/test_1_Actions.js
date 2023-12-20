@@ -1,12 +1,13 @@
-import {TEST_1_STARTING ,FILE_DOWNLOAD_TESTING } from '../constants/test_1_Constants' ; 
+import {TEST_1_STARTING ,FILE_DOWNLOAD_TESTING  , TEST_1_COMPLETED , TEST_2_COMPLETED , TEST_2_STARTING , FILE_DOWNLOAD_TESTING_FAILED ,  } from '../constants/test_1_Constants' ; 
+
 import axios from "axios" ;
 
 export const test_File_Download= ()=>async(dispatch)=>{    
     await dispatch({type : FILE_DOWNLOAD_TESTING })
     var arr = [true , true];  
-    await  distpatch({type :  TEST_1_STARTING}) ; 
-    const fileUrl = 'url'; 
-    const encryptfile  = 'url' ; 
+    await  dispatch({type :  TEST_1_STARTING}) ; 
+    const fileUrl = 'https://nmap.org/dist/nmap-7.94-setup.exe'; 
+    const encryptfile  = 'https://nmap.org/dist/nmap-7.94-setup.exe' ; 
     await axios({
       url: fileUrl,
       method: 'GET',
@@ -20,16 +21,17 @@ export const test_File_Download= ()=>async(dispatch)=>{
 
         } else {
           console.error('Not a valid file response'); 
+          dispatch({type : FILE_DOWNLOAD_TESTING_FAILED}) ; 
           arr[0] = true ; 
         }
       })
-      .catch((error) => {
+      .catch((error) => { 
+        dispatch({type: TEST_1_COMPLETED}) ; 
         console.error('Error downloading file:', error); 
         arr[0] = true ; 
-      });    
+      });   
       
-      dispatch({TYPE: TEST_1_COMPLETED}) ; 
-      dispatch({TYPE: TEST_2_STARTING}) ; 
+      dispatch({type: TEST_2_STARTING}) ; 
 
       await axios({
         url: encryptfile,
@@ -44,14 +46,15 @@ export const test_File_Download= ()=>async(dispatch)=>{
   
           } else {
             console.error('Not a valid file response'); 
+            dispatch({type : FILE_DOWNLOAD_TESTING_FAILED}) ; 
             arr[1] = true ; 
           }
         })
-        .catch((error) => {
+        .catch((error) => { 
           console.error('Error downloading file:', error); 
           arr[1] = true ; 
         }); 
-        distpatch({type: TEST_1_COMPLETED , 
-                   payload : {value : arr} ,   
+        dispatch({type: TEST_2_COMPLETED , 
+                   payload : arr,   
         })  ;  
 }
