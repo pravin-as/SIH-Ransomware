@@ -12,6 +12,9 @@ import { useDispatch } from 'react-redux';
 import {loadUser} from "./actions/userActions" 
 import Questions from './component/layout/Questions/Questions.js';  
 import TestingComponent from './component/TestingCompontent/TestingCompontent.js';
+import Results from './component/Results/Results.js'; 
+import NMap from './component/layout/nMap/Nmap.js'; 
+import ResultsDashBoard from "./component/DashBoard/ResultsDashBoard.js"
 
 
 function App() {  
@@ -42,6 +45,10 @@ function App() {
     {isAuthenticated && <Route path = "/" Component={Home}/>}    
     {isAuthenticated && <Route path = "/questions" Component={Questions}/>}   
     {isAuthenticated && <Route path = "/auto-test" Component={TestingComponent}/>}   
+    {isAuthenticated && <Route path = "/result" Component={Results}/>}   
+    {isAuthenticated && <Route path = "/toNmap" Component={NMap}/>}   
+    <Route path="/ResultsDashBoard" element={<ResultsDashBoard />} />
+
    
     
     </Routes>  

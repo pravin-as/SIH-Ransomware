@@ -23,7 +23,7 @@ function TestingComponent() {
   useEffect(() => {
     if (!loading_1 && !loading_2 && !loading_3) {
       // All tests have finished loading
-      setTimeout(() => navigate('/result', { state: { id: 1, name: 'sabaoon' } }), 2000);
+      setTimeout(() => navigate('/result', { state: { id: 1, name: 'sabaoon' } }), 50000);
     }
   }, [loading_1, loading_2, loading_3, navigate]);
 
@@ -60,19 +60,19 @@ function TestingComponent() {
         {results_1 && (
           <div className="floating-box">
             <span>Test 1</span>
-            <div className="success">✔️</div>
+            <div className="loading">✔️</div>
           </div>
         )}
         {results_2 && (
           <div className="floating-box">
             <span>Test 2</span>
-            <div className="success">✔️</div>
+            <div className="loading">✔️</div>
           </div>
         )}
         {results_3 && (
           <div className="floating-box">
             <span>Test 3</span>
-            <div className="success">✔️</div>
+            <div className="loading">✔️</div>
           </div>
         )}
       </div>

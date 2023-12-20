@@ -8,7 +8,7 @@ import {
 from "../constants/questionConstant" ;   
 
 
-export const questionReducer = (state = {question: {}} , action)=>{ 
+export const questionReducers = (state = {questionn: {}} , action)=>{ 
     switch(action.type){ 
           
         case FETCH_FIRST_QUESTION_REQUEST:  
@@ -20,7 +20,7 @@ export const questionReducer = (state = {question: {}} , action)=>{
                return{ 
                   ...state , 
                   loading: false , 
-                  question : action.payload ,
+                  questionn : action.payload ,
                }  ;  
         case  FETCH_NEXT_SET_REQUEST:  
                return {  
@@ -31,7 +31,7 @@ export const questionReducer = (state = {question: {}} , action)=>{
                return {    
                  ...state ,
                  loading: false , 
-                 question: action.payload , 
+                 questionn: action.payload , 
                } ; 
         case FETCH_REPORT_REQUEST: 
                return  {
@@ -43,9 +43,9 @@ export const questionReducer = (state = {question: {}} , action)=>{
                 return{
                      ...state , 
                      loading: false ,
-                     question : action.payload 
+                     questionn : action.payload 
                 }  
-
+  
         case FETCH_REPORT_ERROR ,FETCH_FIRST_QUESTION_ERROR , FETCH_NEXT_SET_ERROR: 
               return{
                     ...state , 

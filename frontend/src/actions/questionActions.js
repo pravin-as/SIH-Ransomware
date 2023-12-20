@@ -24,15 +24,15 @@ export const fetchfirstQuestion =  ()=>   async(dispatch)=> {
         }); 
 } 
 // fetch next set 
-export const fetchSetQuestion =  (question)=>   async(dispatch)=> { 
+export const fetchSetQuestion =  (data)=>   async(dispatch)=> { 
     await dispatch({type: FETCH_NEXT_SET_REQUEST}) ; 
-    let link  = `http://localhost:4000/api/v1/set-response`;    
+    let link  = `http://localhost:4000/api/v1/response`;    
     const config = {headers: {"content-Type": "application/json"} }         
-    await axios.post(link , {question} , config).then( 
+    await axios.post(link , {data} , config).then( 
         async  (response)=>{ 
             console.log(response) ; 
             await dispatch({type: FETCH_NEXT_SET_SUCCESS , 
-            payload: response.questions}) ;  
+            payload: response.message}) ;  
     })
     .catch((error)=>{ 
              dispatch({type: FETCH_NEXT_SET_ERROR, 

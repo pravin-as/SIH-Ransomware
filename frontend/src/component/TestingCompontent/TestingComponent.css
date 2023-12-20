@@ -1,11 +1,12 @@
 /* Add this CSS to your TestingComponent.css file */
 
+ 
 .testing-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 50vh;
-  bottom: 0 ; 
+  /* bottom: 0 ;  */
 }
 
 .floating-box {
@@ -19,7 +20,7 @@
 
 }
 
-.loading {
+.loading1 {
   font-size: 16px;
   margin-top: 10px; 
   width: 16vh;

@@ -112,12 +112,14 @@ exports.scanOnPort  = catchAsyncError(async (req , res , next)=>{
 
 exports.openPorts = catchAsyncError(async(req , res , next)=>{ 
   var nmapscan = new nmap.NmapScan( `${ipAdd} --script vulners` , '-sV');   
-  console.log(ipAdd) ; 
+  console.log(ipAdd) ;  
+  
   let data1;
 
   nmapscan.on('complete', async (data) => {    
       const ipAdd = req.body.ipAdd ;  
-      console.log(ipAdd) ;
+      console.log(ipAdd) ; 
+      
       data1 = data[0].openPorts;  
       var openPorts = [] ; 
       for (var i = 0; i < data1.length; i++) {

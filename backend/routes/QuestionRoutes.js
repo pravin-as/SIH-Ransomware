@@ -9,7 +9,7 @@ const question  = require("../controller/QuestionController") ;
 router.route('/set-first').get(auth.isAuthenticatedUser , question.first) ; 
 
 // asking for  next quesiton
-router.route('/set-response').post(auth.isAuthenticatedUser , question.ask) ;    
+router.route('/response').post( question.ask) ;    
 
 // asking for final report 
 router.route('report').post(auth.isAuthenticatedUser  , question.report) ;   

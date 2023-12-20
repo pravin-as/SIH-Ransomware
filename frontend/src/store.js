@@ -4,9 +4,9 @@ import {composeWithDevTools} from "redux-devtools-extension"   ;
 import { userReducer  , profileReducer , forgetPasswordReducer } from "./reducers/userReducers";   
 import { test_1_Reducer , test_2_Reducer , test_3_Reducer } from "./reducers/Test_Reducer"; 
 // import { questionReducer } from "./reducers/questionReducer"; 
-import { questionReducer}  from "./reducers/tempQuestionReducer" ; 
-
-
+import { questionReducer}  from "./reducers/tempQuestionReducer" ;  
+import { questionReducers } from "./reducers/questionReducer";
+import  {NmapReducers} from "./reducers/NmapReducer"
 
 
 const reducer = combineReducers({   
@@ -16,7 +16,9 @@ const reducer = combineReducers({
    test_1: test_1_Reducer, 
    test_2: test_2_Reducer , 
    test_3: test_3_Reducer ,   
-   question: questionReducer , 
+   question: questionReducer ,  
+   questionn : questionReducers,  
+   nmap: NmapReducers , 
 } ) ; 
 
 let intialState = {  
